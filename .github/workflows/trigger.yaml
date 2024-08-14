@@ -1,15 +1,19 @@
-name: Receive repository dispatch event
+name: Dispatch Event
 
 on:
-  repository_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-  dispatch:
+  trigger-event:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Repository Dispatch
+      - name: Send repository_dispatch
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           repository: r-akemii/repo_b
-          event-type: push
+          event-type: custom-event
+          client-payload: '{"ref": "main"}'
