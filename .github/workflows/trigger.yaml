@@ -4,8 +4,12 @@ on:
   repository_dispatch:
 
 jobs:
-  log:
+  dispatch:
     runs-on: ubuntu-latest
     steps:
-      - name: Event received
-        run: echo "Event received"
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: r-akemii/repo_b
+          event-type: my-event
