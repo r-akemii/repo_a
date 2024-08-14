@@ -3,7 +3,7 @@ name: Dispatch Event
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   trigger-event:
@@ -16,4 +16,4 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           repository: r-akemii/repo_b
           event-type: custom-event
-          client-payload: '{"ref": "main"}'
+          client-payload: '{"ref": "master"}'
