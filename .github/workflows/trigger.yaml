@@ -12,4 +12,4 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           repository: r-akemii/repo_b
-          event-type: my-event
+          event-type: push
