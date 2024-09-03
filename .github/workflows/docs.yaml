@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-     MERGE_REQUEST_ID: 'python/${{github.event.number}}/'
+     MERGE_REQUEST_ID: echo 'python/${{github.event.number}}/'
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python 3.10
@@ -21,4 +21,4 @@ jobs:
     #   run: echo "MERGE_REQUEST_ID=python/${{ github.event.number }}" >> $GITHUB_ENV
     - name: Print info
       run: |
-        echo $env.MERGE_REQUEST_ID
+        echo $MERGE_REQUEST_ID
