@@ -21,4 +21,4 @@ jobs:
     #   run: echo "MERGE_REQUEST_ID=python/${{ github.event.number }}" >> $GITHUB_ENV
     - name: Print info
       run: |
-        echo $MERGE_REQUEST_ID
+        echo $env.MERGE_REQUEST_ID
