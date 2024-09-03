@@ -1,5 +1,8 @@
 name: Documentation
 
+env:
+ MERGE_REQUEST_ID: ${{github.event.number}}
+
 on:
  push:
    branches:
@@ -17,6 +20,4 @@ jobs:
         python-version: '3.10'
     - name: Print info
       run: |
-        echo ${{github.ref}}
-        echo ${{github.ref_name}}
-        echo ${{github.event.number}}
+        echo 'python/${MERGE_REQUEST_ID}'
