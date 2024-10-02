@@ -1,0 +1,14 @@
+name: ScheduleTest
+
+on:  
+  schedule:
+    - cron: '10 * * * *'
+
+jobs:
+  translation:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+    steps:
+    - name: Print
+      run: echo "hello world"
