@@ -3,7 +3,7 @@ name: ScheduleTest
 on:
   pull_request:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "0 8 * * 1"
 
 jobs:
   translation:
