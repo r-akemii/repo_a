@@ -3,19 +3,22 @@ name: Documentation
 on:
  push:
    branches:
-     - develop
+     - master
  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+     MERGE_REQUEST_ID: echo 'python/${{github.event.number}}/'
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python 3.10
       uses: actions/setup-python@v5
       with:
         python-version: '3.10'
+    # - name: Create variable
+    #   run: echo "MERGE_REQUEST_ID=python/${{ github.event.number }}" >> $GITHUB_ENV
     - name: Print info
       run: |
-        echo github.ref
-        echo github.ref_name
+        echo $MERGE_REQUEST_ID
