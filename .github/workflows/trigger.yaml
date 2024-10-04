@@ -1,19 +1,19 @@
-name: Dispatch Event
+# name: Dispatch Event
 
-on:
-  push:
-    branches:
-      - master
+# on:
+#   push:
+#     branches:
+#       - master
 
-jobs:
-  trigger-event:
-    runs-on: ubuntu-latest
+# jobs:
+#   trigger-event:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Send repository_dispatch
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          repository: r-akemii/repo_b
-          event-type: custom-event
-          client-payload: '{"ref": "master"}'
+#     steps:
+#       - name: Send repository_dispatch
+#         uses: peter-evans/repository-dispatch@v3
+#         with:
+#           token: ${{ secrets.ACCESS_TOKEN }}
+#           repository: r-akemii/repo_b
+#           event-type: custom-event
+#           client-payload: '{"ref": "master"}'
