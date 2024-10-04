@@ -1,11 +1,9 @@
 name: ScheduleTest
 
 on:
-  push:
-    branches: [master]
   pull_request:
   schedule:
-    - cron: "*/12 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   translation:
