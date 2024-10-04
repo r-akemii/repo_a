@@ -1,15 +1,15 @@
-# name: Dispatch Event
+name: Dispatch Event
 
-# on:
-#   push:
-#     branches:
-#       - master
+on:
+  push:
+    branches:
+      - master
 
-# jobs:
-#   trigger-event:
-#     runs-on: ubuntu-latest
+jobs:
+  trigger-event:
+    runs-on: ubuntu-latest
 
-#     steps:
+    steps:
 #       - name: Send repository_dispatch
 #         uses: peter-evans/repository-dispatch@v3
 #         with:
@@ -17,3 +17,5 @@
 #           repository: r-akemii/repo_b
 #           event-type: custom-event
 #           client-payload: '{"ref": "master"}'
+        - name: Hello Event
+          run: echo "Hello event dispatch"
